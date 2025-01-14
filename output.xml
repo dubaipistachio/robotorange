@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2025-01-06T16:56:29.634657" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="/Users/caca/Downloads/belajar/login.robot">
+<test id="s1-t1" name="Login to Website" line="44">
+<kw name="Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-06T16:56:29.739281" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-06T16:56:29.739164" elapsed="9.502277"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-06T16:56:39.242352" elapsed="0.486458"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-06T16:56:39.729151" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<arg>${USERNAME}</arg>
+<arg>Admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-06T16:56:39.728944" elapsed="0.111856"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-01-06T16:56:39.841077" level="INFO">Typing password into text field 'name=password'.</msg>
+<msg time="2025-01-06T16:56:39.853757" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD}</arg>
+<arg>admin123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-06T16:56:39.840930" elapsed="0.037165"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-06T16:56:39.878568" level="INFO">Clicking button 'css=.oxd-button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-06T16:56:39.878278" elapsed="0.035193"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DASHBOARD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-06T16:56:39.913593" elapsed="1.717102"/>
+</kw>
+<status status="PASS" start="2025-01-06T16:56:29.738876" elapsed="11.891958"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-06T16:56:51.632794" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-06T16:56:41.631016" elapsed="10.002858"/>
+</kw>
+<tag>SuccessfulLogin</tag>
+<status status="PASS" start="2025-01-06T16:56:29.738548" elapsed="21.896618"/>
+</test>
+<test id="s1-t2" name="Logout to Website" line="48">
+<kw name="Logout">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DROPDOWN_LOGOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-06T16:56:51.637588" elapsed="0.021297"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-01-06T16:56:57.020018" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-06T16:56:57.020195" level="FAIL">Element 'xpath=.//a[.='Logout']' not visible after 5 seconds.</msg>
+<arg>${LOGOUT_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-06T16:56:51.658987" elapsed="5.365082">Element 'xpath=.//a[.='Logout']' not visible after 5 seconds.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${LOGOUT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-06T16:56:57.024189" elapsed="0.000017"/>
+</kw>
+<status status="FAIL" start="2025-01-06T16:56:51.637126" elapsed="5.387157">Element 'xpath=.//a[.='Logout']' not visible after 5 seconds.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-01-06T16:56:57.024359" elapsed="0.000012"/>
+</kw>
+<tag>SuccessfulLogout</tag>
+<status status="FAIL" start="2025-01-06T16:56:51.635931" elapsed="5.388526">Element 'xpath=.//a[.='Logout']' not visible after 5 seconds.</status>
+</test>
+<status status="FAIL" start="2025-01-06T16:56:29.635233" elapsed="27.389547"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">SuccessfulLogin</stat>
+<stat pass="0" fail="1" skip="0">SuccessfulLogout</stat>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
