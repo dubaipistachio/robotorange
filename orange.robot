@@ -8,8 +8,13 @@ ${PASSWORD}    name=password
 ${LOGIN_BUTTON}    css=.oxd-button
 ${DASHBOARD}    css=.oxd-topbar-header-title
 ${DROPDOWN_LOGOUT}    css=.bi-caret-down-fill
+<<<<<<< HEAD:orange.robot
 ${LOGOUT_BUTTON}    xpath=.//a[.='Logout']
 ${ERROR_MESSAGE}  css=.oxd-alert-content-text 
+=======
+${LOGOUT_BUTTON}    xpath=//a[.='Logout']
+# ${ERROR_MESSAGE}  css=.text-red-500 
+>>>>>>> 98d9d73 (Add logout):login.robot
 
 *** Keywords ***
 
@@ -25,7 +30,7 @@ Logout
     Wait Until Element Is Visible    ${DROPDOWN_LOGOUT}
     Wait Until Element Is Visible    ${LOGOUT_BUTTON}
     Click Button    ${LOGOUT_BUTTON}
-    # Wait Until Element Is Visible  ${LOGIN_BUTTON}
+    Wait Until Element Is Visible  ${USERNAME}
 
 Invalid Login 
     Open Browser    ${BASE_URL}    chrome
