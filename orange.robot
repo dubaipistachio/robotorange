@@ -34,7 +34,7 @@ Invalid Login
     Input Password    ${PASSWORD}    111!
     Click Button    ${LOGIN_BUTTON}
     Wait Until Element Is Visible  ${ERROR_MESSAGE}
-    # Input Text    ${EMAIL}    usyafairfan1000@gmail.com
+    Input Text    ${USERNAME}    jkj@gmail.com
     # Input Password    ${PASSWORD}    1234qwer
     # Click Button    ${LOGIN_BUTTON}
     # Wait Until Element Is Visible  ${ERROR_MESSAGE}
