@@ -9,7 +9,7 @@ ${LOGIN_BUTTON}    css=.oxd-button
 ${DASHBOARD}    css=.oxd-topbar-header-title
 ${DROPDOWN_LOGOUT}    css=.bi-caret-down-fill
 ${LOGOUT_BUTTON}    xpath=.//a[.='Logout']
-# ${ERROR_MESSAGE}  css=.text-red-500 
+${ERROR_MESSAGE}  css=.oxd-alert-content-text 
 
 *** Keywords ***
 
@@ -27,17 +27,17 @@ Logout
     Click Button    ${LOGOUT_BUTTON}
     # Wait Until Element Is Visible  ${LOGIN_BUTTON}
 
-# Invalid Login 
-#     Open Browser    ${BASE_URL}    chrome
-#     Wait Until Element Is Visible    ${EMAIL}
-#     Input Text    ${EMAIL}    musyafairfan1000@gmail.com
-#     Input Password    ${PASSWORD}    111!
-#     Click Button    ${LOGIN_BUTTON}
-#     Wait Until Element Is Visible  ${ERROR_MESSAGE}
-#     Input Text    ${EMAIL}    usyafairfan1000@gmail.com
-#     Input Password    ${PASSWORD}    1234qwer
-#     Click Button    ${LOGIN_BUTTON}
-#     Wait Until Element Is Visible  ${ERROR_MESSAGE}
+Invalid Login 
+    Open Browser    ${BASE_URL}    chrome
+    Wait Until Element Is Visible    ${USERNAME}
+    Input Text    ${USERNAME}    musyafairfan1000@gmail.com
+    Input Password    ${PASSWORD}    111!
+    Click Button    ${LOGIN_BUTTON}
+    Wait Until Element Is Visible  ${ERROR_MESSAGE}
+    # Input Text    ${EMAIL}    usyafairfan1000@gmail.com
+    # Input Password    ${PASSWORD}    1234qwer
+    # Click Button    ${LOGIN_BUTTON}
+    # Wait Until Element Is Visible  ${ERROR_MESSAGE}
 
 
 *** Test Cases ***
@@ -49,7 +49,7 @@ Logout to Website
     [Tags]    SuccessfulLogout
     Logout
     Sleep    10s
-# Login Invalid
-#     [Tags]    InvalidCredentialsLogin
-#     Invalid Login
+Login Invalid
+    [Tags]    InvalidCredentialsLogin
+    Invalid Login
     
